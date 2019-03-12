@@ -18,6 +18,8 @@ submission/
 cfg/
 darknet
 .fuse*
+weights/
+uwrt/TrainingData/
 
 # OS Generated #
 .DS_Store*
