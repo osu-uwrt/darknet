@@ -36,7 +36,7 @@ OBJDIR=./obj/
 
 CC=gcc
 CPP=g++
-NVCC=nvcc 
+NVCC=$(cuda_path_osc)/bin/nvcc
 AR=ar
 ARFLAGS=rcs
 OPTS=-Ofast
@@ -62,9 +62,11 @@ COMMON+= `pkg-config --cflags opencv`
 endif
 
 ifeq ($(GPU), 1) 
-COMMON+= -DGPU -I/usr/local/cuda/include/
+#COMMON+= -DGPU -I/usr/local/cuda/include/
+COMMON+= -DGPU -I$(cuda_path_osc)/include/
 CFLAGS+= -DGPU
-LDFLAGS+= -L/usr/local/cuda/lib64 -lcuda -lcudart -lcublas -lcurand
+#LDFLAGS+= -L/usr/local/cuda/lib64 -lcuda -lcudart -lcublas -lcurand
+LDFLAGS+= -L$(cuda_path_osc)/lib64 -lcuda -lcudart -lcublas -lcurand
 endif
 
 ifeq ($(CUDNN), 1) 

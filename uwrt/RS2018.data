@@ -2,4 +2,4 @@ classes = 7
 train  = uwrt/TrainingData/train_RS2018.txt
 valid  = uwrt/TrainingData/valid_RS2018.txt
 names = uwrt/RS2018.names
-backup = uwrt/backup/
+backup = uwrt/backup
